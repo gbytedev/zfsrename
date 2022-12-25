@@ -7,7 +7,7 @@ help() {
     echo "Usage: $(basename "$0") -D pool/dataset@ SEARCH_STRING REPLACE_STRING"
     echo "Usage: $(basename "$0") -D pool/ SEARCH_STRING REPLACE_STRING"
     echo
-    echo " -D, --dataset <pool/dataset@>  send source dataset incrementally to destination"
+    echo " -D, --dataset <pool/dataset@>  limit operation to datasets starting with a specific string"
     echo " -d, --dry-run                  show output without making actual changes"
     echo " -h, --help                     show this help"
     exit 0
@@ -25,7 +25,8 @@ for arg in "$@"; do
       shift
       shift
     else
-      echo "--dataset|-D Limit operation to datasets starting with this string (pool/dataset)."
+      echo "ERROR: --dataset|-D requires a string 
+      argument."
       exit 1
     fi
     ;;
